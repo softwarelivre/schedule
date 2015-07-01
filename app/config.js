@@ -4,7 +4,7 @@
   angular
     .module('segue.schedule')
     .constant('Config', {
-      API_HOST: 'http://segue-api.fisl16.softwarelivre.org', //192.168.33.91',
+      API_HOST: 'http://192.168.33.91',
       API_PATH: '/api',
       PROPOSAL_LANGUAGES: [
         { abbr: 'pt', name: 'português' },
