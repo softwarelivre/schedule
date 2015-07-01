@@ -1,5 +1,6 @@
 <div class="slot hour-{{ slot.hour }} duration-{{ slot.duration }}"
       ng-class="{zoomed: slot.id == zoomedId}"
+      ng-show="slot.talk"
       ng-click="zoomOnSlot(slot)"
       ng-repeat="slot in slotsOfRoom[room.id]">
 
@@ -22,7 +23,6 @@
         {{ slot.talk.id }}
       </a>
     </span>
-    <span class="empty"  ng-hide="slot.talk">sem palestra designada</span>
     <span class="filled" ng-show="slot.talk">{{ slot.talk.title }}</span>
   </div>
 

@@ -130,9 +130,16 @@ main.schedule {
         background-repeat: no-repeat;
         background-position: bottom right;
 
-        &.duration-60  { width: 1 * $slotWidth - 0.3rem }
-        &.duration-120 { width: 2 * $slotWidth - 0.3rem }
-        &.duration-180 { width: 3 * $slotWidth - 0.3rem }
+        &.duration-60  { width:  1 * $slotWidth - 0.3rem; }
+        &.duration-120 { width:  2 * $slotWidth - 0.3rem; }
+        &.duration-180 { width:  3 * $slotWidth - 0.3rem; }
+        &.duration-240 { width:  4 * $slotWidth - 0.3rem; }
+        &.duration-300 { width:  5 * $slotWidth - 0.3rem; }
+        &.duration-360 { width:  6 * $slotWidth - 0.3rem; }
+        &.duration-420 { width:  7 * $slotWidth - 0.3rem; }
+        &.duration-480 { width:  8 * $slotWidth - 0.3rem; }
+        &.duration-520 { width:  9 * $slotWidth - 0.3rem; }
+        &.duration-600 { width: 10 * $slotWidth - 0.3rem; }
 
         label { display: none; }
 
@@ -148,7 +155,7 @@ main.schedule {
           @include ellipsis;
           padding-left: 3px;
           height: 1.2em;
-          width: $slotWidth * 0.9;
+          width: 99%;
           font-size: small;
           color: gray;
           background: lightgray;
@@ -157,7 +164,7 @@ main.schedule {
           @include box-text;
           padding-left: 3px;
           height: 2.4em;
-          width: $slotWidth * 0.9;
+          width: 99%;
           font-size: small;
           color: black;
           .id { display: none; }
@@ -166,7 +173,7 @@ main.schedule {
           @include box-text;
           padding-left: 3px;
           height: 1.1em;
-          width: $slotWidth;
+          width: 99%;
           font-size: small;
           color: gray;
         }
