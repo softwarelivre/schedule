@@ -5,7 +5,6 @@
       ng-repeat="slot in slotsOfRoom[room.id]">
 
   <div class="info">
-    <span class="id">{{ slot.id }}</span>
     <span class="room"><b>sala:</b> {{ slot.room.name }}</span>
     <span class="hour"><b>horário:</b> {{ slot.begins | time_locale }}</span>
     <span class="duration"><b>duração</b> {{ slot.duration }}min</span>
@@ -18,11 +17,6 @@
   </div>
   <div class="title">
     <label>título:</label>
-    <span class="id">
-      <a ui-sref="proposals.detail({id: slot.talk.id})" target="blank_">
-        {{ slot.talk.id }}
-      </a>
-    </span>
     <span class="filled" ng-show="slot.talk">{{ slot.talk.title }}</span>
   </div>
 
