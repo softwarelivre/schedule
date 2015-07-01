@@ -2,7 +2,7 @@
 
 header.schedule {
   div.days {
-    text-align: center;
+    text-align: right;
     .day {
       display: inline;
 
@@ -123,13 +123,16 @@ main.schedule {
       position: relative;
       height: $slotHeight;
       .slot {
-        width: $slotWidth;
-        height: $slotHeight;
+        height: $slotHeight * 0.95;
         position: absolute;
         outline: 1px solid gray;
         background-color: lightgray;
         background-repeat: no-repeat;
         background-position: bottom right;
+
+        &.duration-60  { width: 1 * $slotWidth - 0.3rem }
+        &.duration-120 { width: 2 * $slotWidth - 0.3rem }
+        &.duration-180 { width: 3 * $slotWidth - 0.3rem }
 
         label { display: none; }
 
@@ -145,7 +148,7 @@ main.schedule {
           @include ellipsis;
           padding-left: 3px;
           height: 1.2em;
-          width: $slotWidth;
+          width: $slotWidth * 0.9;
           font-size: small;
           color: gray;
           background: lightgray;

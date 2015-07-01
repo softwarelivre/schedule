@@ -3,35 +3,38 @@
 
   angular
     .module('segue.schedule.filters', [ ])
-    .filter('dateFromTimestamp', function() {
-      return function(input) {
-        var year  = input.substring(0,4);
-        var month = input.substring(5,7);
-        var day   = input.substring(8,10);
-        return day + "/" + month + "/" + year;
+    .service('DateParser', function(Config) {
+      return {
+        parse: function(input, timezone) {
+          if (!timezone) { timezone = Config.TIMEZONE; }
+          var timestamp = Date.parse(input+timezone);
+          if (isNaN(timestamp)) { return null; }
+          return new Date(timestamp);
+        }
       };
     })
-    .filter('time_locale',function(Config) {
+    .filter('human_day',function(Config, DateParser) {
       return function(input,timezone) {
-        if (!timezone) { timezone = Config.TIMEZONE; }
-        var timestamp = Date.parse(input+timezone);
-        if (isNaN(timestamp)) { return ''; }
-        return (new Date(timestamp)).toLocaleTimeString();
+        var date = DateParser.parse(input+'T12:00:00', timezone);
+        return date.getDate();
+      };
+    })
+    .filter('time_locale',function(Config, DateParser) {
+      return function(input,timezone) {
+        var date = DateParser.parse(input, timezone);
+        return date.toLocaleTimeString();
       };
     })
     .filter('date_locale',function() {
       return function(input) {
-        var timestamp = Date.parse(input);
-        if (isNaN(timestamp)) { return ''; }
-        return (new Date(timestamp)).toLocaleDateString();
+        var date = DateParser.parse(input, timezone);
+        return date.toLocaleTimeString();
       };
     })
     .filter('datetime_locale', function(Config) {
       return function(input, timezone) {
-        if (!timezone) { timezone = Config.TIMEZONE; }
-        var timestamp = Date.parse(input+timezone);
-        if (isNaN(timestamp)) { return ''; }
-        return (new Date(timestamp)).toLocaleString();
+        var date = DateParser.parse(input, timezone);
+        return date.toLocaleString();
       };
     });
 })();

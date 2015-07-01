@@ -13,7 +13,17 @@
       $scope.currentDay = currentDay;
     })
     .controller('GridController', function($scope, $state, Config, Schedule, currentDay) {
+      $scope.hours = Config.HOURS;
       $scope.slotsOfRoom = {};
+      $scope.zoomedId = null;
+
+      $scope.zoomOnSlot = function(slot) {
+        $scope.zoomedId = slot.id;
+      };
+      $scope.resetZoom = function($event) {
+        if ($event) $event.stopPropagation();
+        $scope.zoomedId = null;
+      };
 
       Schedule.rooms().then(function(rooms) {
         $scope.rooms = rooms;
