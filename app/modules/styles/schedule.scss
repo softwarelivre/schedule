@@ -143,7 +143,7 @@ main.schedule {
 
         label { display: none; }
 
-        .info, .actions, .status { display: none; }
+        .info, .coauthors { display: none; }
         .icons {
           position: absolute;
           bottom: 5px;
@@ -193,7 +193,7 @@ main.schedule {
           display: initial;
         }
 
-        .track, .title, .author, .status {
+        .track, .title, .author, .coauthors {
           display: block;
           padding-left: 3px;
           width: initial;
@@ -206,6 +206,10 @@ main.schedule {
           background: white;
           padding: 0 5px;
           display: initial;
+        }
+        .coauthors {
+          span::after { content: ", "; }
+          span:last-child::after { content: ''; }
         }
 
         .info {

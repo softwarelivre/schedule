@@ -28,6 +28,10 @@
 
   <div class="author">
     <label>autor principal:</label>
-    <span ng-show="slot.talk">{{ slot.talk.owner }}</span>
+    <span>{{ slot.talk.owner }}</span>
   </div>
+
+  <div class="coauthors" ng-show="slot.talk.coauthors.length">
+    <label>co-autores:</label>
+    <span ng-repeat="coauthor in slot.talk.coauthors">{{ coauthor }}</span>
 </div>
