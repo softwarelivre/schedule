@@ -1,0 +1,7 @@
+webhost: schedule.fisl16.softwarelivre.org
+webport: 80
+sitename: schedule
+master_host: fisl16.softwarelivre.org
+api_host: http://segue-api.fisl16.softwarelivre.org
+api_path: /api
+app_path: /var/www/schedule.{{ master_host }}
