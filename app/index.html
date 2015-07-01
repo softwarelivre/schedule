@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="segue.schedule">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>fisl - grade de horários</title>
+    <!-- inject:vendor:css -->
+    <!-- endinject -->
+    <!-- inject:custom:css -->
+    <!-- endinject -->
+    <!-- inject:vendor:js -->
+    <!-- endinject -->
+    <!-- inject:custom:js -->
+    <!-- endinject -->
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+    <script src='config.js'></script>
+  </head>
+  <body ng-controller="ScheduleController" class="{{ topState }}">
+    <header class="noprint {{ topState }}" ui-view="header">
+    </header>
+
+    <main class="{{ topState }} {{ subState }}" ui-view="main">
+    </main>
+
+  </body>

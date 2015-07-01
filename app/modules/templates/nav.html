@@ -1,0 +1,10 @@
+<img class="logo" ng-click="home()" src="/images/logo-fisl-small.png"/>
+<h1>
+  grade de horários
+</h1>
+<div class="days">
+  <div class="day" ng-repeat="day in days">
+    <button ng-class="{ current: day == currentDay }"
+            ui-sref="schedule({day: day})">{{ day }}</button>
+  </div>
+</div>
