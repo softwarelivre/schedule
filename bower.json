@@ -1,0 +1,33 @@
+{
+  "name": "schedule",
+  "version": "0.0.1",
+  "homepage": "https://github.com/segue-org/schedule",
+  "authors": [
+    "Felipe Mobus <fmobus@gmail.com>"
+  ],
+  "description": "Segue schedule console",
+  "main": "app/index.js",
+  "license": "GPLv3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.1",
+    "angular-ui-router": "~0.2.11",
+    "angular-gettext": "~1.1.4",
+    "font-awesome": "~4.2.0",
+    "lodash": "~3.9.3",
+    "restangular": "~1.4.0",
+    "angular-loading-bar": "~0.6.0",
+    "ngstorage": "~0.3.6"
+  },
+  "resolutions": {
+    "lodash": "~3.9.3"
+  }
+}
