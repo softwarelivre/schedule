@@ -26,6 +26,6 @@
   </div>
 
   <div class="coauthors" ng-show="slot.talk.coauthors.length">
-    <label>co-autores:</label>
+    <label translate translate-n="slot.talk.coauthors.length" translate-plural="co-autores:">co-autor:</label>
     <span ng-repeat="coauthor in slot.talk.coauthors">{{ coauthor }}</span>
 </div>

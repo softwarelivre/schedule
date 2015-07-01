@@ -7,6 +7,7 @@
   angular
     .module('segue.schedule',[
       'templates',
+      'gettext',
       'ui.router',
       'ui.router.compat',
       'restangular',
