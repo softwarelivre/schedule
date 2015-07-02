@@ -1,0 +1,39 @@
+$headerWidth: 10rem;
+
+main.talk {
+  h1 { font-size: xx-large; }
+  h2 { font-size: large; }
+  section {
+    clear: both;
+    margin-bottom: 1rem;
+
+    header {
+      text-align: right;
+      float: left;
+      width: $headerWidth;
+      font-weight: bold;
+    }
+    >div {
+      margin-left: $headerWidth + 1rem;
+    }
+  }
+  section.authors {
+    .resume-toggle {
+      font-size: small;
+      cursor: pointer;
+      color: blue;
+    }
+    div.resume {
+      border-left: 3px solid green;
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+  }
+  section.full {
+    div {
+      white-space: pre-wrap;
+      width: 30rem;
+    }
+  }
+
+}

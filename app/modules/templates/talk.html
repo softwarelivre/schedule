@@ -1,0 +1,41 @@
+<article>
+  <h1>
+    {{ talk.title }}
+  </h1>
+
+  <section class="track">
+    <header>trilha:</header>
+    <div>{{ talk.track }}</div>
+  </section>
+
+  <section class="authors">
+    <header>autores:</header>
+    <div>{{ author.name }}</div>
+    <div ng-repeat="person in talk.coauthors">
+      {{ person.name }}
+      <span ng-show="person.resume">
+        <span class="resume-toggle" ng-click="showResume(person.name)" ng-hide="shownResumes[person.name]">mostrar currículo</span>
+        <span class="resume-toggle" ng-click="hideResume(person.name)" ng-show="shownResumes[person.name]">esconder currículo</span>
+      </span>
+      <div class="resume" ng-show="shownResumes[person.name]">
+        {{ person.resume }}
+      </div>
+    </div>
+  </section>
+
+  <section class="slot" ng-show="talk.slots.length">
+    <header ng-show="talk.slots.length == 1">apresentação:</header>
+    <header ng-show="talk.slots.length > 1">apresentações:</header>
+    <div ng-repeat="slot in talk.slots">
+      <span class="day"><b>dia:</b> {{ slot.begins | date_locale }}</span>
+      <span class="hour"><b>horário:</b> {{ slot.begins | time_locale }}</span>
+      <span class="room"><b>sala:</b> {{ slot.room_name }}</span>
+      <span class="duration"><b>duração:</b> {{ slot.duration }}min</span>
+    </div>
+  </section>
+
+  <section class="full">
+    <header>descrição:</header>
+    <div>{{ talk.full }}</div>
+  </section>
+</article>

@@ -14,6 +14,14 @@
     })
     .controller('TalkController', function($scope, $state, Config, talk) {
       $scope.talk = talk;
+      $scope.shownResumes = {};
+
+      $scope.showResume = function(personName) {
+        $scope.shownResumes[personName] = true;
+      };
+      $scope.hideResume = function(personName) {
+        delete $scope.shownResumes[personName];
+      };
     })
     .controller('GridController', function($scope, $state, Config, Schedule, currentDay) {
       $scope.hours = Config.HOURS;
