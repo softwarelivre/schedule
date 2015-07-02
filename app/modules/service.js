@@ -8,7 +8,11 @@
     .service("Schedule", function(Restangular, Config, $q) {
       var self = {};
       var rooms = Restangular.service('rooms');
+      var talks = Restangular.service('talks');
 
+      self.getTalk = function(id) {
+        return talks.one(id).get();
+      };
       self.days = function() {
         return Config.EVENT_DAYS;
       };

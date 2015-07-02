@@ -1,13 +1,13 @@
 <div class="slot hour-{{ slot.hour }} duration-{{ slot.duration }}"
       ng-class="{zoomed: slot.id == zoomedId}"
       ng-show="slot.talk"
-      ng-click="zoomOnSlot(slot)"
+      ng-click="zoomOnSlot(slot,$event)"
       ng-repeat="slot in slotsOfRoom[room.id]">
 
   <div class="info">
-    <span class="room"><b>sala:</b> {{ slot.room.name }}</span>
+    <span class="room"><b>sala:</b> {{ slot.room_name }}</span>
     <span class="hour"><b>horário:</b> {{ slot.begins | time_locale }}</span>
-    <span class="duration"><b>duração</b> {{ slot.duration }}min</span>
+    <span class="duration"><b>duração:</b> {{ slot.duration }}min</span>
     <button class="close" ng-click="resetZoom($event)">&times;</button>
   </div>
 
@@ -28,4 +28,10 @@
   <div class="coauthors" ng-show="slot.talk.coauthors.length">
     <label translate translate-n="slot.talk.coauthors.length" translate-plural="co-autores:">co-autor:</label>
     <span ng-repeat="coauthor in slot.talk.coauthors">{{ coauthor }}</span>
+  </div>
+
+  <div class="more">
+    <a ui-sref="talk({id:slot.talk.id})" ng-click="$event.stopPropagation()" target="_blank">mais detalhes</a>
+  </div>
+
 </div>

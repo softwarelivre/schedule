@@ -12,12 +12,18 @@
       $scope.days = Config.EVENT_DAYS;
       $scope.currentDay = currentDay;
     })
+    .controller('TalkController', function($scope, $state, Config, talk) {
+      $scope.talk = talk;
+    })
     .controller('GridController', function($scope, $state, Config, Schedule, currentDay) {
       $scope.hours = Config.HOURS;
       $scope.slotsOfRoom = {};
       $scope.zoomedId = null;
 
-      $scope.zoomOnSlot = function(slot) {
+      $scope.showTalk = function(talkId) {
+        $state.go('talk', { id: talkId });
+      };
+      $scope.zoomOnSlot = function(slot, $event) {
         $scope.zoomedId = slot.id;
       };
       $scope.resetZoom = function($event) {

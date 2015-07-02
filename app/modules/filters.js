@@ -13,25 +13,25 @@
         }
       };
     })
-    .filter('human_day',function(Config, DateParser) {
+    .filter('human_day',function(DateParser) {
       return function(input,timezone) {
         var date = DateParser.parse(input+'T12:00:00', timezone);
         return date.getDate();
       };
     })
-    .filter('time_locale',function(Config, DateParser) {
+    .filter('time_locale',function(DateParser) {
       return function(input,timezone) {
         var date = DateParser.parse(input, timezone);
         return date.toLocaleTimeString();
       };
     })
-    .filter('date_locale',function() {
-      return function(input) {
+    .filter('date_locale',function(DateParser) {
+      return function(input, timezone) {
         var date = DateParser.parse(input, timezone);
-        return date.toLocaleTimeString();
+        return date.toLocaleDateString();
       };
     })
-    .filter('datetime_locale', function(Config) {
+    .filter('datetime_locale', function(DateParser) {
       return function(input, timezone) {
         var date = DateParser.parse(input, timezone);
         return date.toLocaleString();

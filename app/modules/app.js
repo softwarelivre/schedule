@@ -26,6 +26,17 @@
           resolve: {
             currentDay: function($stateParams) { return $stateParams.day || '2015-07-08'; }
           }
+        })
+        .state('talk', {
+          url: '^/talk/:id',
+          views: {
+            header: { controller: 'HeaderController', templateUrl: 'modules/templates/nav.html' },
+            main:   { controller: 'TalkController',   templateUrl: 'modules/templates/talk.html' }
+          },
+          resolve: {
+            talk: function(Schedule, $stateParams) { return Schedule.getTalk($stateParams.id); },
+            currentDay: function() { return null; }
+          }
         });
     })
     .controller("ScheduleController", function($scope, $state, Config) {
