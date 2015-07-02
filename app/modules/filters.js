@@ -15,8 +15,15 @@
     })
     .filter('human_day',function(DateParser) {
       return function(input,timezone) {
-        var date = DateParser.parse(input+'T12:00:00', timezone);
+        if (input.length == 10) { input = input + 'T12:00:00'; }
+        var date = DateParser.parse(input, timezone);
         return date.getDate();
+      };
+    })
+    .filter('human_time',function(DateParser) {
+      return function(input,timezone) {
+        var date = DateParser.parse(input, timezone);
+        return date.getHours();
       };
     })
     .filter('time_locale',function(DateParser) {

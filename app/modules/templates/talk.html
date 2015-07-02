@@ -27,10 +27,10 @@
     <header ng-show="talk.slots.length == 1">apresentação:</header>
     <header ng-show="talk.slots.length > 1">apresentações:</header>
     <div ng-repeat="slot in talk.slots">
-      <span class="day"><b>dia:</b> {{ slot.begins | date_locale }}</span>
-      <span class="hour"><b>horário:</b> {{ slot.begins | time_locale }}</span>
-      <span class="room"><b>sala:</b> {{ slot.room_name }}</span>
-      <span class="duration"><b>duração:</b> {{ slot.duration }}min</span>
+      dia <b>{{ slot.begins | human_day }}</b>
+      às <b>{{ slot.begins | human_time }}</b>
+      na sala <b>{{ slot.room_name }}</b>
+      ({{ slot.duration }} minutos)
     </div>
   </section>
 
