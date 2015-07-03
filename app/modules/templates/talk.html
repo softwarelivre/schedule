@@ -10,7 +10,16 @@
 
   <section class="authors">
     <header>autores:</header>
-    <div>{{ author.name }}</div>
+    <div>
+      {{ talk.owner.name }}
+      <span ng-show="talk.owner.resume">
+        <span class="resume-toggle" ng-click="showResume(talk.owner.name)" ng-hide="shownResumes[talk.owner.name]">mostrar currículo</span>
+        <span class="resume-toggle" ng-click="hideResume(talk.owner.name)" ng-show="shownResumes[talk.owner.name]">esconder currículo</span>
+      </span>
+      <div class="resume" ng-show="shownResumes[talk.owner.name]">
+        {{ talk.owner.resume }}
+      </div>
+    </div>
     <div ng-repeat="person in talk.coauthors">
       {{ person.name }}
       <span ng-show="person.resume">
