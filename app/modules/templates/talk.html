@@ -37,7 +37,7 @@
     <header ng-show="talk.slots.length > 1">apresentações:</header>
     <div ng-repeat="slot in talk.slots">
       dia <b>{{ slot.begins | human_day }}</b>
-      às <b>{{ slot.begins | human_time }}</b>
+      às <b>{{ slot.begins | human_time }}h</b>
       na sala <b>{{ slot.room_name }}</b>
       ({{ slot.duration }} minutos)
     </div>
