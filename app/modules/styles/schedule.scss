@@ -122,6 +122,7 @@ main.schedule {
     .slot-line {
       position: relative;
       height: $slotHeight;
+
       .slot {
         height: $slotHeight * 0.95;
         position: absolute;
@@ -144,7 +145,13 @@ main.schedule {
 
         label { display: none; }
 
-        .info, .coauthors, .more { display: none; }
+        img {
+          bottom: 0;
+          right: 0;
+          position: absolute;
+        }
+
+        .info, .coauthors, .more, .recordings { display: none; }
         .icons {
           position: absolute;
           bottom: 5px;
@@ -225,8 +232,10 @@ main.schedule {
           .id { font-size: small; }
           .close { margin-right: 5px; float: right; cursor: hand; }
         }
-        .more {
+        .more, .recordings {
+          float: left;
           display: block;
+          margin: 0.5rem;
         }
       }
 
@@ -241,49 +250,6 @@ main.schedule {
       .slot.hour-17 { left: 8  * $slotWidth; }
       .slot.hour-18 { left: 9  * $slotWidth; }
       .slot.hour-19 { left: 10 * $slotWidth; }
-    }
-  }
-}
-
-.ngdialog.ngdialog-theme-default {
-  &.dialog-proposal-create,
-  &.dialog-proposal-lookup {
-    .ngdialog-content {
-      width: 77vw;
-    }
-
-    header {
-      input {
-        width: 100%;
-        font-size: large;
-      }
-    }
-  }
-}
-.ngdialog.ngdialog-theme-default.dialog-proposal-lookup {
-  .results {
-    border-collapse: collapse;
-
-    td {
-      border-right: 1px solid black;
-      padding-left: 3px;
-    }
-    td.id     { width: 3vw;  max-width: 3vw;  }
-    td.title  { width: 40vw; max-width: 40vw; }
-    td.author { width: 20vw; max-width: 20vw; }
-    td.status { width: 10vw; max-width: 10vw;  }
-    td.action { width: 10vw; max-width: 10vw; border: 0px; }
-
-    tr {
-      &.proposal  { color: gray; }
-      &.pending   { color: orange; }
-      &.confirmed { color: black; }
-      &.declined  { color: red; }
-
-      .id { color: gray; font-size: small; }
-      .title { @include ellipsis; }
-      .author { @include ellipsis; }
-
     }
   }
 }

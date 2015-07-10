@@ -34,4 +34,10 @@
     <a ui-sref="talk({id:slot.talk.id})" ng-click="$event.stopPropagation()" target="_blank">mais detalhes</a>
   </div>
 
+  <div class="recordings">
+    <a href="{{ recording }}" target="_blank" ng-repeat="recording in slot.recordings">vídeo</a>
+  </div>
+
+  <img src="/images/video.png" ng-show="slot.recordings.length" />
+
 </div>

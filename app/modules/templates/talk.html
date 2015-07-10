@@ -40,6 +40,7 @@
       às <b>{{ slot.begins | human_time }}h</b>
       na sala <b>{{ slot.room_name }}</b>
       ({{ slot.duration }} minutos)
+      <a href="{{ recording }}" target="_blank" ng-repeat="recording in slot.recordings">vídeo</a>
     </div>
   </section>
 
