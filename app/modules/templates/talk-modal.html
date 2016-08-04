@@ -1,0 +1,74 @@
+<div class="modal-header bg-primary">
+
+      <div class="col-sm-11 pull-left">
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i> &nbsp; {{ talk.title }} 
+      </div>
+
+      <div class="col-sm-1 pull-right" ng-click="close()" style="cursor: pointer;">
+            <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+
+</div>
+<div class="modal-body">
+
+  <div>
+    <strong>Trilha:</strong>
+    <span>{{ talk.track }}</span>
+  </div>
+
+  <div>
+    <strong>Autores:</strong>
+    <div>
+      {{ talk.owner.name }}
+      <span ng-show="talk.owner.resume">
+        <span class="resume-toggle" ng-click="showResume(talk.owner.name)" ng-hide="shownResumes[talk.owner.name]"><a>mostrar currículo</a></span>
+        <span class="resume-toggle" ng-click="hideResume(talk.owner.name)" ng-show="shownResumes[talk.owner.name]"><a>esconder currículo</a></span>
+      </span>
+      <div class="resume" ng-show="shownResumes[talk.owner.name]">
+        {{ talk.owner.resume }}
+      </div>
+    </div>
+    <div ng-repeat="person in talk.coauthors">
+      {{ person.name }}
+      <span ng-show="person.resume">
+        <span class="resume-toggle" ng-click="showResume(person.name)" ng-hide="shownResumes[person.name]"><a>mostrar currículo</a></span>
+        <span class="resume-toggle" ng-click="hideResume(person.name)" ng-show="shownResumes[person.name]"><a>esconder currículo</a></span>
+      </span>
+      <div class="resume" ng-show="shownResumes[person.name]">
+        {{ person.resume }}
+      </div>
+    </div>
+  </div>
+
+  <div class="slot" ng-show="talk.slots.length">
+    <strong ng-show="talk.slots.length == 1">Apresentação:</strong>
+    <strong ng-show="talk.slots.length > 1">apresentações:</strong>
+      <div ng-repeat="slot in talk.slots">
+        Dia <b>{{ slot.begins | human_day }}</b>
+        às <b>{{ slot.begins | human_time }}:{{ (slot.begins | human_time_minutes) == 0 ? '00' : (slot.begins | human_time_minutes) }}</b>
+        na sala <b>{{ slot.room_name }}</b>
+        ({{ slot.duration }} minutos)
+        <a href="{{ recording }}" target="_blank" ng-repeat="recording in slot.recordings">
+          <i class="fa fa-film" aria-hidden="true"></i>&nbsp;vídeo
+        </a>
+      </div>
+  </section>
+
+  <div>
+    <strong>Descrição:</strong>
+      <hm-read-more
+          hm-text="{{ talk.full }}" 
+          hm-limit="150" 
+          hm-more-text="mais" 
+          hm-less-text="menos"
+          hm-dots-class="dots"
+          hm-link-class="links">
+      </hm-read-more>
+    </div>
+
+
+  </div>
+
+</article>
+
+</div>

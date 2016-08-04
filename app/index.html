@@ -2,8 +2,10 @@
 <html ng-app="segue.schedule">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <title>fisl - grade de horários</title>
+    <title>Fisl 17 - Grade de horários</title>
     <!-- inject:vendor:css -->
     <!-- endinject -->
     <!-- inject:custom:css -->
@@ -14,9 +16,11 @@
     <!-- endinject -->
     <!-- inject:templates:js -->
     <!-- endinject -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js'></script>
+    
     <script src='config.js'></script>
   </head>
-  <body ng-controller="ScheduleController" class="{{ topState }}">
+  <body ng-controller="ScheduleController" class="{{ topState }}" >
     <header class="noprint {{ topState }}" ui-view="header">
     </header>
 

@@ -8,12 +8,15 @@
     .module('segue.schedule',[
       'templates',
       'gettext',
+      'angularMoment',
+      'ui.bootstrap',
       'ui.router',
       'ui.router.compat',
       'restangular',
+      'hm.readmore',
       'angular-loading-bar',
-
-      'segue.schedule.controllers',
+      'ngcTableDirective',
+      'segue.schedule.controllers'
     ])
     .config(function($stateProvider) {
       $stateProvider
@@ -24,7 +27,7 @@
             main:   { controller: 'GridController',   templateUrl: 'modules/templates/grid.html' }
           },
           resolve: {
-            currentDay: function($stateParams) { return $stateParams.day || '2015-07-10'; }
+            currentDay: function($stateParams) { return $stateParams.day ||  '2016-07-13' }
           }
         })
         .state('talk', {

@@ -1,10 +1,30 @@
-<img class="logo" ng-click="home()" src="/images/logo-fisl-small.png"/>
-<h1>
-  grade de horários
-</h1>
-<div class="days">
-  <div class="day" ng-repeat="day in days">
-    <button ng-class="{ current: day == currentDay }"
-            ui-sref="schedule({day: day})">dia {{ day | human_day }}</button>
-  </div>
-</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type ="button"
+              class="navbar-toggle"
+              ng-init="menuCollapsed=true"
+              ng-click="menuCollapsed=!menuCollapsed">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand" href="" style="padding-top: 2px;">
+        <img class="img-responsive" src="/images/logo-fisl-small.png"/>
+      </div>
+    </div>
+
+
+    <div class="navbar-collapse collapse" uib-collapse="menuCollapsed">
+  
+      <ul class="nav navbar-nav navbar-right">
+    	  <li ng-class="{'active' : day == currentDay}" ng-repeat="day in days">
+    		 <a ui-sref="schedule({day: day})">Dia - {{ day | human_day }}</a>
+    	  </li>
+      </ul>
+
+    </div>
+
+</nav>

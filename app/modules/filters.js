@@ -26,6 +26,12 @@
         return date.getHours();
       };
     })
+    .filter('human_time_minutes',function(DateParser) {
+      return function(input,timezone) {
+        var date = DateParser.parse(input, timezone);
+        return date.getMinutes();
+      };
+    })
     .filter('time_locale',function(DateParser) {
       return function(input,timezone) {
         var date = DateParser.parse(input, timezone);
@@ -37,6 +43,20 @@
         var date = DateParser.parse(input, timezone);
         return date.toLocaleDateString();
       };
+    })
+    .filter('small_name', function() {
+      return function(name) {
+        if(!name){ return '' };
+          
+        var splitedName = name.split(' ');
+        if(splitedName.length > 2 )
+        {
+          return splitedName[0] + ' ' + splitedName[1];
+        }
+        else {
+          return name;
+        }
+      }
     })
     .filter('datetime_locale', function(DateParser) {
       return function(input, timezone) {
