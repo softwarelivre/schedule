@@ -11,7 +11,6 @@
     .controller('HeaderController', function($scope, $state, Config, currentDay) {
       $scope.days = Config.EVENT_DAYS;
       $scope.currentDay = currentDay;
-      console.log($scope.currentDay);
     })
     .controller('TalkController', function($scope, $state, Config, talk) {
       $scope.talk = talk;
