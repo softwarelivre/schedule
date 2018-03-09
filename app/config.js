@@ -4,7 +4,7 @@
   angular
     .module('segue.schedule')
     .constant('Config', {
-      API_HOST: 'https://segue-api.softwarelivre.org',
+      API_HOST: 'https://segue-api.fisl18.softwarelivre.org',
       API_PATH: '/api',
       PROPOSAL_LANGUAGES: [
         { abbr: 'pt', name: 'português' },
@@ -13,7 +13,7 @@
       ],
       PROPOSAL_LEVELS: [ "beginner", "advanced" ],
       TIMEZONE: '-0300',
-      EVENT_DAYS: ["2016-07-13","2016-07-14","2016-07-15","2016-07-16"],
+      EVENT_DAYS: ["2018-07-11","2018-07-12","2018-07-13","2018-07-14"],
       HOURS: [ 9, 10,11,12,13,14,15,16,17,18,19 ]
     });
 

@@ -27,7 +27,7 @@
             main:   { controller: 'GridController',   templateUrl: 'modules/templates/grid.html' }
           },
           resolve: {
-            currentDay: function($stateParams) { return $stateParams.day ||  '2016-07-13' }
+            currentDay: function($stateParams) { return $stateParams.day ||  '2018-07-11' }
           }
         })
         .state('talk', {
