@@ -32,7 +32,6 @@
     "angular-datatables": "^0.5.4",
     "angular-bootstrap-affix": "^0.2.2",
     "angular-jquery": "^0.2.1",
-    "angular-read-more": "^1.0.5",
     "ng-cells": "^0.4.0"
   },
   "resolutions": {

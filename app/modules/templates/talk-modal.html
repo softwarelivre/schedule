@@ -56,16 +56,12 @@
 
   <div>
     <strong>Descrição:</strong>
-      <hm-read-more
-          hm-text="{{ talk.full }}" 
-          hm-limit="150" 
-          hm-more-text="mais" 
-          hm-less-text="menos"
-          hm-dots-class="dots"
-          hm-link-class="links">
-      </hm-read-more>
-    </div>
-
+        <p>
+          {{ talk.full | limitTo:descriptionLength }}
+          <small><a href="#" role="button" ng-click="showFullDescription()" ng-show="showReadMoreButton()">(mais ...)</a></small>
+          <small><a href="#" role="button" ng-click="showShortDescription()" ng-show="!showReadMoreButton()">(menos)</a></small>
+        </p>
+  </div>
 
   </div>
 

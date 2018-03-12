@@ -13,7 +13,6 @@
       'ui.router',
       'ui.router.compat',
       'restangular',
-      'hm.readmore',
       'angular-loading-bar',
       'ngcTableDirective',
       'segue.schedule.controllers'

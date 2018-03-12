@@ -273,9 +273,25 @@
     })
     .controller('SlotViewController', function ($scope, $uibModalInstance,
                                                talk) {
+
+        var descriptionMinlength = 150;
+        var descriptionMaxLength = 1000;
         
         $scope.talk = talk;
         $scope.shownResumes = {};
+        $scope.descriptionLength = descriptionMinlength;
+
+        $scope.showFullDescription = function() {
+          $scope.descriptionLength = descriptionMaxLength;
+        };
+
+        $scope.showShortDescription = function() {
+          $scope.descriptionLength = descriptionMinlength;
+        }
+
+        $scope.showReadMoreButton  = function() {
+          return $scope.descriptionLength == descriptionMinlength;
+        }
 
         $scope.showResume = function(personName) {
           $scope.shownResumes[personName] = true;
