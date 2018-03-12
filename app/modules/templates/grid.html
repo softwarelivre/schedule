@@ -4,7 +4,7 @@
     <thead>
       <tr>
             <th>Sala\Hora</th>
-            <th ng-repeat="time in eventTimes">
+            <th ng-repeat="time in eventTimes[currentDay]">
                   <strong class="text-center"><span ng-bind="time"></span></strong>
             </th>
       </tr>
