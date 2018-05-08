@@ -51,7 +51,7 @@
         var splitedName = name.split(' ');
         if(splitedName.length > 2 )
         {
-          return splitedName[0] + ' ' + splitedName[1];
+          return splitedName[0] + ' ' + splitedName[splitedName.length - 1];
         }
         else {
           return name;
