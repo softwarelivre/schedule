@@ -48,7 +48,7 @@
         às <b>{{ slot.begins | human_time }}:{{ (slot.begins | human_time_minutes) == 0 ? '00' : (slot.begins | human_time_minutes) }}</b>
         na sala <b>{{ slot.room_name }}</b>
         ({{ slot.duration }} minutos)
-        <a href="{{ recording }}" target="_blank" ng-repeat="recording in slot.recordings">
+        <a href="{{ recording }}" target="_blank" ng-if="$last" ng-repeat="recording in slot.recordings">
           <i class="fa fa-film" aria-hidden="true"></i>&nbsp;vídeo
         </a>
       </div>
